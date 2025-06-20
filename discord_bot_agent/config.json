@@ -1,0 +1,14 @@
+{
+    "general": {
+        "prefix": "p?",
+        "cool_down": 3,
+        "status": {
+            "active_type": "playing",
+            "message": "your mom"
+        }
+    },
+    "cogs": {
+        "included": [],
+        "excluded": []
+    }
+}
