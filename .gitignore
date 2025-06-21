@@ -28,6 +28,7 @@ env/
 *.log
 tmp/
 *.tmp
+**/temp/**
 .DS_Store
 Thumbs.db
 
