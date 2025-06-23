@@ -53,11 +53,9 @@ def setup_logging():
     # 檔案處理器
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
     log_file_name = f'discord_bot_{timestamp}.log'
-    file_handler = logging.handlers.RotatingFileHandler(
+    file_handler = logging.FileHandler(
         filename=os.path.join(log_dir, log_file_name),
-        encoding='utf-8',
-        maxBytes=32 * 1024 * 1024,
-        backupCount=5
+        encoding='utf-8'
     )
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
@@ -70,6 +68,7 @@ async def active(env_path: str='./.env', token_name: str='DISCORD_BOT_TOKEN'):
     DISCORD_API_KEY = os.environ.get(token_name)
     if DISCORD_API_KEY is None:
         logging.critical("Cannot Get discord token, please check your .env file")
+        return
 
     intents = discord.Intents.default()
     intents.messages = True
